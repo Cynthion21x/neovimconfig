@@ -84,6 +84,11 @@ _G.packer_plugins = {
     path = "/home/cynthion21x/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
+  ["lazygit.nvim"] = {
+    loaded = true,
+    path = "/home/cynthion21x/.local/share/nvim/site/pack/packer/start/lazygit.nvim",
+    url = "https://github.com/kdheepak/lazygit.nvim"
+  },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
     path = "/home/cynthion21x/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",

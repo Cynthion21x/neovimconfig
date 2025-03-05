@@ -13,6 +13,14 @@ return require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
 
+  use({
+          "kdheepak/lazygit.nvim",
+          -- optional for floating window border decoration
+          requires = {
+                  "nvim-lua/plenary.nvim",
+          },
+  })
+
   use 'navarasu/onedark.nvim'
   use { "catppuccin/nvim", as = "catppuccin" }
 
