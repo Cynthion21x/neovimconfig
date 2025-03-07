@@ -5,6 +5,7 @@ require("cynthion.theme")
 require("mason").setup()
 require("mason-lspconfig").setup()
 
+
 vim.opt.shortmess:append("I")  
 
 vim.g.lazygit_floating_window_winblend = 0 -- transparency of floating window

@@ -15,3 +15,7 @@ map("v", "<Up>", ":<C-u>echoe 'Get off my lawn!'<CR>")
 map("v", "<Down>", ":<C-u>echoe 'Get off my lawn!'<CR>")
 map("v", "<Left>", ":<C-u>echoe 'Get off my lawn!'<CR>")
 map("v", "<Right>", ":<C-u>echoe 'Get off my lawn!'<CR>")
+
+vim.api.nvim_set_keymap('n', '<CR>', 'o<Esc>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<S-CR>', 'O<Esc>', { noremap = true, silent = true })
+
