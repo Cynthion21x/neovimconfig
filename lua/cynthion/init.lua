@@ -2,28 +2,22 @@ require("cynthion.remap")
 require("cynthion.set")
 require("cynthion.theme")
 
-require("mason").setup()
-require("mason-lspconfig").setup()
+vim.opt.shortmess:append("I")
 
+vim.g.lazygit_floating_window_winblend = 0
+vim.g.lazygit_floating_window_scaling_factor = 0.9
+vim.g.lazygit_floating_window_border_chars = {'╭','─', '╮', '│', '╯','─', '╰', '│'}
+vim.g.lazygit_floating_window_use_plenary = 0
+vim.g.lazygit_use_neovim_remote = 1
 
-vim.opt.shortmess:append("I")  
+vim.g.lazygit_use_custom_config_file_path = 0
+vim.g.lazygit_config_file_path = ''
+vim.g.lazygit_config_file_path = {}
 
-vim.g.lazygit_floating_window_winblend = 0 -- transparency of floating window
-vim.g.lazygit_floating_window_scaling_factor = 0.9 -- scaling factor for floating window
-vim.g.lazygit_floating_window_border_chars = {'╭','─', '╮', '│', '╯','─', '╰', '│'} -- customize lazygit popup window border characters
-vim.g.lazygit_floating_window_use_plenary = 0 -- use plenary.nvim to manage floating window if available
-vim.g.lazygit_use_neovim_remote = 1 -- fallback to 0 if neovim-remote is not installed
-
-vim.g.lazygit_use_custom_config_file_path = 0 -- config file path is evaluated if this value is 1
-vim.g.lazygit_config_file_path = '' -- custom config file path
--- OR
-vim.g.lazygit_config_file_path = {} -- table of custom config file paths
-
-vim.g.lazygit_on_exit_callback = nil -- optional function callback when exiting lazygit (useful for example to refresh some UI elements after lazy git has made some changes)
+vim.g.lazygit_on_exit_callback = nil
 
 local quotes = {
-    "Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.",
-    "If you don't finish then you're just busy, not productive.",
+    "fail to prepare, prepare to fail",
     "A monad is just a monoid in the context of endofunctors",
     "Don't live with broken windows.",
     "Violence solves all problems. Just use brute force",
@@ -32,15 +26,15 @@ local quotes = {
     "Better than minecraft splash text"
 }
 
-math.randomseed(os.time()) 
+math.randomseed(os.time())
 local random_quote = quotes[math.random(#quotes)]
 
 vim.api.nvim_create_autocmd("VimEnter", {
     callback = function()
-        if vim.fn.argc() == 0 then  
+        if vim.fn.argc() == 0 then
             local total_width = vim.api.nvim_get_option("columns")
-            local total_height = 40 
-            local win_width = math.floor(total_width * 0.6) 
+            local total_height = 40
+            local win_width = math.floor(total_width * 0.6)
             local win_height = 13
             local col = math.floor((total_width - win_width) / 2)
             local row = math.floor((total_height - win_height) / 2) - 2
