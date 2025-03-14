@@ -55,8 +55,6 @@ for type, icon in pairs(signs) do
     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
-
-
 local cmp = require('cmp')
 
 
@@ -82,3 +80,12 @@ cmp.setup({
         { name = "buffer", keyword_length = 3 },
     })
 })
+
+vim.g.diagnostics_visible = true
+
+vim.keymap.set("n", "<Space><Tab>", function()
+    vim.g.diagnostics_visible = not vim.g.diagnostics_visible
+    vim.diagnostic.config({
+        virtual_text = vim.g.diagnostics_visible,
+    })
+end, { desc = "Toggle diagnostic virtual text" })
