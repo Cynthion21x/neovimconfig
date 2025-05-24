@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/cynthion21x/.cache/nvim/packer_hererocks/2.1.1703358377/share/lua/5.1/?.lua;/home/cynthion21x/.cache/nvim/packer_hererocks/2.1.1703358377/share/lua/5.1/?/init.lua;/home/cynthion21x/.cache/nvim/packer_hererocks/2.1.1703358377/lib/luarocks/rocks-5.1/?.lua;/home/cynthion21x/.cache/nvim/packer_hererocks/2.1.1703358377/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/cynthion21x/.cache/nvim/packer_hererocks/2.1.1703358377/lib/lua/5.1/?.so"
+local package_path_str = "/home/cynthion/.cache/nvim/packer_hererocks/2.1.1737090214/share/lua/5.1/?.lua;/home/cynthion/.cache/nvim/packer_hererocks/2.1.1737090214/share/lua/5.1/?/init.lua;/home/cynthion/.cache/nvim/packer_hererocks/2.1.1737090214/lib/luarocks/rocks-5.1/?.lua;/home/cynthion/.cache/nvim/packer_hererocks/2.1.1737090214/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/cynthion/.cache/nvim/packer_hererocks/2.1.1737090214/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -74,84 +74,103 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  catppuccin = {
-    loaded = true,
-    path = "/home/cynthion21x/.local/share/nvim/site/pack/packer/start/catppuccin",
-    url = "https://github.com/catppuccin/nvim"
-  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
-    path = "/home/cynthion21x/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
+    path = "/home/cynthion/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
+  },
+  ["everforest-nvim"] = {
+    config = { "\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15everforest\frequire\0" },
+    loaded = true,
+    path = "/home/cynthion/.local/share/nvim/site/pack/packer/start/everforest-nvim",
+    url = "https://github.com/neanias/everforest-nvim"
   },
   ["lazygit.nvim"] = {
     loaded = true,
-    path = "/home/cynthion21x/.local/share/nvim/site/pack/packer/start/lazygit.nvim",
+    path = "/home/cynthion/.local/share/nvim/site/pack/packer/start/lazygit.nvim",
     url = "https://github.com/kdheepak/lazygit.nvim"
   },
   ["mason-lspconfig.nvim"] = {
+    config = { "\27LJ\2\nV\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\21automatic_enable\1\nsetup\20mason-lspconfig\frequire\0" },
+    load_after = {},
     loaded = true,
-    path = "/home/cynthion21x/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
+    needs_bufread = false,
+    path = "/home/cynthion/.local/share/nvim/site/pack/packer/opt/mason-lspconfig.nvim",
     url = "https://github.com/williamboman/mason-lspconfig.nvim"
   },
   ["mason-null-ls.nvim"] = {
     loaded = true,
-    path = "/home/cynthion21x/.local/share/nvim/site/pack/packer/start/mason-null-ls.nvim",
+    path = "/home/cynthion/.local/share/nvim/site/pack/packer/start/mason-null-ls.nvim",
     url = "https://github.com/jay-babu/mason-null-ls.nvim"
   },
   ["mason.nvim"] = {
+    after = { "mason-lspconfig.nvim" },
+    config = { "\27LJ\2\n3\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\nmason\frequire\0" },
     loaded = true,
-    path = "/home/cynthion21x/.local/share/nvim/site/pack/packer/start/mason.nvim",
+    only_config = true,
+    path = "/home/cynthion/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
   ["null-ls.nvim"] = {
     loaded = true,
-    path = "/home/cynthion21x/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
+    path = "/home/cynthion/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
     url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
   },
   ["nvim-cmp"] = {
     loaded = true,
-    path = "/home/cynthion21x/.local/share/nvim/site/pack/packer/start/nvim-cmp",
+    path = "/home/cynthion/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
   ["nvim-lint"] = {
     loaded = true,
-    path = "/home/cynthion21x/.local/share/nvim/site/pack/packer/start/nvim-lint",
+    path = "/home/cynthion/.local/share/nvim/site/pack/packer/start/nvim-lint",
     url = "https://github.com/mfussenegger/nvim-lint"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
-    path = "/home/cynthion21x/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    path = "/home/cynthion/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["nvim-treesitter"] = {
     loaded = true,
-    path = "/home/cynthion21x/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    path = "/home/cynthion/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
-  },
-  ["onedark.nvim"] = {
-    loaded = true,
-    path = "/home/cynthion21x/.local/share/nvim/site/pack/packer/start/onedark.nvim",
-    url = "https://github.com/navarasu/onedark.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
-    path = "/home/cynthion21x/.local/share/nvim/site/pack/packer/start/packer.nvim",
+    path = "/home/cynthion/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
   ["plenary.nvim"] = {
     loaded = true,
-    path = "/home/cynthion21x/.local/share/nvim/site/pack/packer/start/plenary.nvim",
+    path = "/home/cynthion/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
-    path = "/home/cynthion21x/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+    path = "/home/cynthion/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: everforest-nvim
+time([[Config for everforest-nvim]], true)
+try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15everforest\frequire\0", "config", "everforest-nvim")
+time([[Config for everforest-nvim]], false)
+-- Config for: mason.nvim
+time([[Config for mason.nvim]], true)
+try_loadstring("\27LJ\2\n3\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\nmason\frequire\0", "config", "mason.nvim")
+time([[Config for mason.nvim]], false)
+-- Load plugins in order defined by `after`
+time([[Sequenced loading]], true)
+vim.cmd [[ packadd nvim-lspconfig ]]
+vim.cmd [[ packadd mason-lspconfig.nvim ]]
+
+-- Config for: mason-lspconfig.nvim
+try_loadstring("\27LJ\2\nV\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\21automatic_enable\1\nsetup\20mason-lspconfig\frequire\0", "config", "mason-lspconfig.nvim")
+
+time([[Sequenced loading]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

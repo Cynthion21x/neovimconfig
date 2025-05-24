@@ -21,8 +21,13 @@ return require('packer').startup(function(use)
           },
   })
 
-  use 'navarasu/onedark.nvim'
-  use { "catppuccin/nvim", as = "catppuccin" }
+  use({
+          "neanias/everforest-nvim",
+          -- Optional; default configuration will be used if setup isn't called.
+          config = function()
+                  require("everforest").setup()
+          end,
+  })
 
   use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 
@@ -30,8 +35,24 @@ return require('packer').startup(function(use)
   use ('hrsh7th/nvim-cmp')
   use ('hrsh7th/cmp-nvim-lsp')
 
-  use ('williamboman/mason.nvim')
-  use ('williamboman/mason-lspconfig.nvim')
+
+  use {
+          "williamboman/mason.nvim",
+          config = function ()
+                  require("mason").setup()
+          end,
+  }
+
+  use {
+          "williamboman/mason-lspconfig.nvim",
+          after = { "mason.nvim", "nvim-lspconfig" },
+          config = function ()
+                  require("mason-lspconfig").setup({
+                          automatic_enable = false,
+                  })
+          end
+  }
+
 
   use ('mfussenegger/nvim-lint')
 

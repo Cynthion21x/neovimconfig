@@ -8,15 +8,7 @@ lspconfig_defaults.capabilities = vim.tbl_deep_extend(
 )
 
 require("mason").setup()
-require("mason-lspconfig").setup()
-
-local lspconfig = require("lspconfig")
-require("mason-lspconfig").setup_handlers({
-    function(server_name)
-        lspconfig[server_name].setup({})
-    end,
-})
-
+require("mason-lspconfig").setup({automatic_enable = false,})
 
 local null_ls = require("null-ls")
 local mason_null_ls = require("mason-null-ls")

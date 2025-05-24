@@ -1,18 +1,5 @@
-require("catppuccin").setup({
-        flavour = "mocha",
-        show_end_of_buffer = true,
-        intergrations = {
-                treesitter = true
-        }
-})
+require("everforest").setup()
 
-vim.cmd.colorscheme "catppuccin"
+vim.cmd([[colorscheme everforest]])
 
--- [[
---require('onedark').setup {
---    style = 'deep',
---    ending_tildes = true
---}
---require('onedark').load()
---]]
-
+require("everforest").load()
